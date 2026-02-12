@@ -158,7 +158,7 @@ const App: React.FC = () => {
                   </div>
                   <div className={`text-[10px] font-bold px-2 py-0.5 rounded-full border 
                     ${completedCount === totalCount
-                      ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                      ? 'bg-secondary/10 text-secondary border-secondary/20'
                       : 'bg-primary/10 text-primary border-primary/20'}`}>
                     {completedCount} / {totalCount} COMPLETED
                   </div>

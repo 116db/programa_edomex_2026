@@ -23,13 +23,16 @@ const Header: React.FC<HeaderProps> = ({ onReset }) => {
         )}
       </div>
 
-      <button
-        onClick={() => window.open('https://www.google.com/maps', '_blank')}
-        className="text-primary hover:text-primary-dark transition-colors p-1"
-        aria-label="Open Google Maps"
-      >
-        <span className="material-symbols-outlined text-[28px]">map</span>
-      </button>
+      <div className="flex items-center gap-3">
+        <button
+          onClick={() => window.open('https://www.google.com/maps', '_blank')}
+          className="text-primary hover:text-primary-dark transition-colors p-1"
+          aria-label="Open Google Maps"
+        >
+          <span className="material-symbols-outlined text-[28px]">map</span>
+        </button>
+
+      </div>
     </div>
   );
 };

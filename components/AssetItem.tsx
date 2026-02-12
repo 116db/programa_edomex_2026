@@ -83,7 +83,7 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex, onO
               e.stopPropagation();
               onOpenObservations(asset.id);
             }}
-            className="text-emerald-400 text-[10px] font-bold px-2 py-1 rounded hover:bg-emerald-500/10 transition-colors uppercase tracking-wider hidden sm:block"
+            className="text-secondary font-bold px-2 py-1 rounded hover:bg-secondary/10 transition-colors uppercase tracking-wider hidden sm:block text-[10px]"
           >
             Observaciones
           </button>
@@ -98,7 +98,7 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex, onO
             className={`p-2 rounded-full transition-colors 
             ${!hasValidCoordinates || asset.completed
                 ? 'text-slate-700 cursor-not-allowed hidden group-hover:block opacity-50'
-                : 'text-emerald-400 hover:bg-emerald-500/10'}`}
+                : 'text-secondary hover:bg-secondary/10'}`}
             title="Ver en Mapa"
           >
             <span className="material-symbols-outlined text-[20px]">map</span>

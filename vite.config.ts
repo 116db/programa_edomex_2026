@@ -20,8 +20,8 @@ export default defineConfig(({ mode }) => {
           name: 'Programa de Trabajo EDOMEX 2026',
           short_name: 'PTS EDOMEX',
           description: 'Programa de trabajo para inspección de ductos EDOMEX 2026',
-          theme_color: '#ffffff',
-          background_color: '#ffffff',
+          theme_color: '#0C69EB',
+          background_color: '#101922',
           display: 'standalone',
           orientation: 'portrait',
           icons: [
