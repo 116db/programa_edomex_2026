@@ -8,9 +8,10 @@ interface AssetItemProps {
   index: number;
   onToggle: (id: string) => void;
   globalIndex: number;
+  onOpenObservations: (id: string) => void;
 }
 
-const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex }) => {
+const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex, onOpenObservations }) => {
   const [isMapOpen, setIsMapOpen] = useState(false);
 
   const coordinates = useMemo(() => parseDMS(asset.coordinates), [asset.coordinates]);
@@ -31,6 +32,7 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex }) =
               onChange={() => onToggle(asset.id)}
               className="peer sr-only"
             />
+
             <div className={`w-5 h-5 border-2 rounded-sm transition-all duration-200 ease-out
               ${asset.completed
                 ? 'bg-primary border-primary'
@@ -75,17 +77,17 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex }) =
         {/* Action Area */}
         <div className="flex-shrink-0 self-center flex gap-1 items-center">
 
-          {/* NUEVO BOTÓN AGREGADO AQUÍ */}
+          {/* Observaciones */}
           <button
             onClick={(e) => {
               e.stopPropagation();
-              // Puedes conectar esto a una función real más tarde
-              console.log("Observaciones click para", asset.id);
+              onOpenObservations(asset.id);
             }}
             className="text-emerald-400 text-[10px] font-bold px-2 py-1 rounded hover:bg-emerald-500/10 transition-colors uppercase tracking-wider hidden sm:block"
           >
             Observaciones
           </button>
+
           {/* Internal Map Button */}
           <button
             onClick={(e) => {

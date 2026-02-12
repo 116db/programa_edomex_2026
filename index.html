@@ -30,9 +30,11 @@
           colors: {
             background: '#101922',
             surface: '#1a2632',
-            primary: '#137fec',
-            'primary-dark': '#0f6bc6',
-            border: '#233648',
+            primary: '#0C69EB', // Medium Blue
+            'primary-dark': '#0B2CE1', // Dark Blue
+            secondary: '#0BE1B2', // Green/Teal
+            accent: '#0CDEEB', // Cyan
+            border: '#0090D4', // Light Blue for borders
           }
         },
       },
@@ -43,6 +45,12 @@
       background-color: #101922;
       color: #ffffff;
       overscroll-behavior-y: none;
+      /* Watermark styling */
+      background-image: url('/icon.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      background-size: 50%;
       /* Prevents pull-to-refresh on mobile which feels web-like */
     }
 

@@ -3,7 +3,8 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import AssetItem from './components/AssetItem';
 import ExcelUploader from './components/ExcelUploader';
-import { DaySchedule } from './types';
+import ObservationsScreen from './components/ObservationsScreen';
+import { DaySchedule, Emission } from './types';
 
 const App: React.FC = () => {
   const [scheduleData, setScheduleData] = useState<DaySchedule[]>(() => {
@@ -79,6 +80,43 @@ const App: React.FC = () => {
     })));
   };
 
+  const [selectedAssetId, setSelectedAssetId] = useState<string | null>(null);
+
+  const handleOpenObservations = (id: string) => {
+    setSelectedAssetId(id);
+  };
+
+  const handleSaveObservations = (assetId: string, observations: string, emissions: Emission[]) => {
+    setScheduleData(prevData => prevData.map(day => ({
+      ...day,
+      assets: day.assets.map(asset => {
+        if (asset.id === assetId) {
+          return { ...asset, observations, emissions };
+        }
+        return asset;
+      })
+    })));
+  };
+
+  const selectedAsset = useMemo(() => {
+    if (!selectedAssetId) return null;
+    for (const day of scheduleData) {
+      const asset = day.assets.find(a => a.id === selectedAssetId);
+      if (asset) return asset;
+    }
+    return null;
+  }, [scheduleData, selectedAssetId]);
+
+  if (selectedAsset) {
+    return (
+      <ObservationsScreen
+        asset={selectedAsset}
+        onBack={() => setSelectedAssetId(null)}
+        onSave={handleSaveObservations}
+      />
+    );
+  }
+
   if (scheduleData.length === 0) {
     return (
       <div className="min-h-screen bg-background flex flex-col font-sans">
@@ -134,6 +172,7 @@ const App: React.FC = () => {
                       index={index}
                       globalIndex={index}
                       onToggle={handleToggle}
+                      onOpenObservations={handleOpenObservations}
                     />
                   ))}
                 </div>
