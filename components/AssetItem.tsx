@@ -73,7 +73,19 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex }) =
         </div>
 
         {/* Action Area */}
-        <div className="flex-shrink-0 self-center flex gap-1">
+        <div className="flex-shrink-0 self-center flex gap-1 items-center">
+
+          {/* NUEVO BOTÓN AGREGADO AQUÍ */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              // Puedes conectar esto a una función real más tarde
+              console.log("Observaciones click para", asset.id);
+            }}
+            className="text-emerald-400 text-[10px] font-bold px-2 py-1 rounded hover:bg-emerald-500/10 transition-colors uppercase tracking-wider hidden sm:block"
+          >
+            Observaciones
+          </button>
           {/* Internal Map Button */}
           <button
             onClick={(e) => {
