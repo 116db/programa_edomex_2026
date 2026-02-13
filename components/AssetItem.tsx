@@ -17,6 +17,12 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex, onO
   const coordinates = useMemo(() => parseDMS(asset.coordinates), [asset.coordinates]);
   const hasValidCoordinates = coordinates !== null;
 
+  const tagLabel = useMemo(() => {
+    if (asset.id.includes('ESM')) return 'ESM';
+    const parts = asset.id.split('-');
+    return parts[parts.length - 1] || asset.classType;
+  }, [asset.id, asset.classType]);
+
   return (
     <>
       <div
@@ -49,7 +55,7 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex, onO
         {/* Content Area */}
         <div className="flex-1 min-w-0 flex flex-col justify-center">
           <div className="flex items-baseline gap-2 mb-0.5">
-            <span className={`text-xs font-mono font-bold ${asset.completed ? 'text-blue-300' : 'text-primary'}`}>
+            <span className={`text-base font-mono font-bold ${asset.completed ? 'text-blue-300' : 'text-primary'}`}>
               {String(globalIndex + 1).padStart(2, '0')}
             </span>
             <h3 className={`text-base font-bold font-mono tracking-tight truncate transition-colors duration-200
@@ -63,7 +69,7 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex, onO
           </p>
           <div className="flex items-center gap-2 mt-1">
             <span className="px-1.5 py-0.5 rounded bg-blue-900/50 text-[10px] font-medium text-blue-100 border border-blue-700">
-              {asset.classType}
+              {tagLabel}
             </span>
             {/* Coordinate preview if valid */}
             {hasValidCoordinates && (
@@ -83,7 +89,7 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex, onO
               e.stopPropagation();
               onOpenObservations(asset.id);
             }}
-            className="text-secondary font-bold px-2 py-1 rounded hover:bg-secondary/10 transition-colors uppercase tracking-wider hidden sm:block text-[10px]"
+            className="text-secondary font-bold px-2 py-1 rounded hover:bg-secondary/10 transition-colors uppercase tracking-wider hidden sm:block text-xs"
           >
             Observaciones
           </button>
@@ -104,7 +110,7 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex, onO
                 : 'text-blue-200 hover:text-white hover:bg-blue-800'}`}
             title="Cómo llegar (Google Maps)"
           >
-            <span className="material-symbols-outlined text-[20px]">directions</span>
+            <span className="material-symbols-outlined text-[24px]">directions</span>
           </button>
         </div>
       </div>

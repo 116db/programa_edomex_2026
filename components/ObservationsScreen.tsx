@@ -71,7 +71,7 @@ const ObservationsScreen: React.FC<ObservationsScreenProps> = ({ asset, onBack, 
                     <span className="text-lg">Inspections</span>
                 </button>
                 <div className="flex flex-col items-center">
-                    <h1 className="text-lg font-bold tracking-tight">Observations</h1>
+                    <h1 className="text-lg font-bold tracking-tight">Observaciones</h1>
                     <span className="text-xs text-blue-200 font-mono">{asset.id}</span>
                 </div>
                 <div className="w-10"></div>
