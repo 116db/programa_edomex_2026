@@ -156,11 +156,11 @@ const App: React.FC = () => {
                       DÍA {dayGroup.day} <span className="text-blue-200 font-normal">/ {getDayDate(dayGroup.day)}</span>
                     </h2>
                   </div>
-                  <div className={`text-[10px] font-bold px-2 py-0.5 rounded-full border 
+                  <div className={`text-[12px] font-bold px-4 py-0.5 rounded-full border 
                     ${completedCount === totalCount
                       ? 'bg-secondary/10 text-secondary border-secondary/20'
                       : 'bg-primary/10 text-primary border-primary/20'}`}>
-                    {completedCount} / {totalCount} COMPLETED
+                    {completedCount} / {totalCount} INSPECCIONES
                   </div>
                 </div>
 

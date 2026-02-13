@@ -62,7 +62,7 @@ const ObservationsScreen: React.FC<ObservationsScreenProps> = ({ asset, onBack, 
     return (
         <div className="min-h-screen text-slate-100 flex flex-col relative overflow-hidden">
             {/* Fixed Header */}
-            <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-primary/10 px-4 py-3 flex items-center justify-between">
+            <header className="sticky top-0 z-40 bg-[#6089B4]/50 backdrop-blur-md border-b border-primary/10 px-4 py-3 flex items-center justify-between">
                 <button
                     onClick={onBack}
                     className="flex items-center text-primary transition-colors hover:opacity-70"
@@ -72,7 +72,7 @@ const ObservationsScreen: React.FC<ObservationsScreenProps> = ({ asset, onBack, 
                 </button>
                 <div className="flex flex-col items-center">
                     <h1 className="text-lg font-bold tracking-tight">Observaciones</h1>
-                    <span className="text-xs text-blue-200 font-mono">{asset.id}</span>
+                    <span className="text-xs text-[20px] text-blue-200 font-mono">{asset.id}</span>
                 </div>
                 <div className="w-10"></div>
             </header>
@@ -88,22 +88,23 @@ const ObservationsScreen: React.FC<ObservationsScreenProps> = ({ asset, onBack, 
                 <div className="flex items-center justify-between shrink-0">
                     <div className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-primary text-xl">factory</span>
-                        <h2 className="text-sm font-semibold uppercase tracking-wider text-blue-200">Emissions</h2>
+                        <h2 className="text-sm font-semibold uppercase tracking-wider text-blue-200">SECCIÓN DE EMISIONES</h2>
                     </div>
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="flex items-center gap-1 bg-primary text-white px-3 py-1.5 rounded-full text-sm font-semibold active:scale-95 transition-transform shadow-lg shadow-primary/20"
+                        className="flex items-center shadow-[0_0_0_2px_#90B540] gap-1 bg-[#90B540]/60 text-white px-3 py-1.5 rounded-full text-sm font-semibold active:scale-95 transition-transform shadow-lg shadow-primary/20"
                     >
                         <span className="material-symbols-outlined text-sm">add</span>
-                        <span>Emisiones</span>
+                        <span>Agregar emisión</span>
                     </button>
                 </div>
 
                 {/* Emissions List Container */}
-                <div className="bg-blue-900/20 rounded-xl p-2 border border-blue-800 space-y-2">
+
+                <div className="bg-[#90B540]/10 rounded-xl p-2 border border-blue-800 space-y-2">
                     {emissions.length === 0 ? (
                         <div className="p-8 text-center text-blue-200 italic text-sm">
-                            No emission data logged yet.
+                            Sin emisiones registradas.
                         </div>
                     ) : (
                         emissions.map(emission => (
@@ -119,35 +120,37 @@ const ObservationsScreen: React.FC<ObservationsScreenProps> = ({ asset, onBack, 
             </main>
 
             {/* Footer Actions */}
-            <footer className="fixed bottom-0 left-0 w-full bg-background/95 backdrop-blur-md border-t border-white/5 p-6 space-y-3 z-30">
+            < footer className="fixed bottom-0 left-0 w-full bg-background/95 backdrop-blur-md border-t border-white/5 p-6 space-y-3 z-30" >
                 <div className="max-w-md mx-auto w-full">
                     <button
                         onClick={handleFinalize}
                         className="w-full bg-primary hover:bg-primary/90 active:scale-[0.98] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20"
                     >
-                        <span className="text-base uppercase tracking-wider">
-                            Save Report
+                        <span className="text-base bg-[#90B540] text-white px-2 py-1 rounded-full uppercase tracking-wider">
+                            Guardar Reporte
                         </span>
                         <span className="material-symbols-outlined">save</span>
                     </button>
                     <p className="text-center text-[10px] text-blue-300 uppercase tracking-[0.2em] font-medium mt-3">
-                        Environmental Compliance Management
+                        HTH Technology al servicio del CENAGAS
                     </p>
                 </div>
-            </footer>
+            </footer >
 
             {/* Modal Backdrop & Modal */}
-            {isModalOpen && (
-                <EmissionModal
-                    onClose={() => {
-                        setIsModalOpen(false);
-                        setEditingEmission(null);
-                    }}
-                    onSave={handleSaveEmission}
-                    initialData={editingEmission || undefined}
-                />
-            )}
-        </div>
+            {
+                isModalOpen && (
+                    <EmissionModal
+                        onClose={() => {
+                            setIsModalOpen(false);
+                            setEditingEmission(null);
+                        }}
+                        onSave={handleSaveEmission}
+                        initialData={editingEmission || undefined}
+                    />
+                )
+            }
+        </div >
     );
 };
 

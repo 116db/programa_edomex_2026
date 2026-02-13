@@ -32,17 +32,17 @@ const EmissionModal: React.FC<EmissionModalProps> = ({ onClose, onSave, initialD
                             <span className="material-symbols-outlined text-primary text-xl">add_chart</span>
                         </div>
                         <h2 className="text-xl font-bold tracking-tight text-white">
-                            {initialData ? 'Edit Emission Data' : 'Add Emission Data'}
+                            {initialData ? 'Editar Datos de Emisión' : 'Agregar Datos de Emisión'}
                         </h2>
                     </div>
-                    <p className="text-sm text-blue-200">Log new environmental sensor measurements.</p>
+                    <p className="text-sm text-blue-200">Registrar nuevas mediciones.</p>
                 </div>
 
                 {/* Form Content */}
                 <div className="p-6 space-y-6">
                     {/* Source Input */}
                     <div className="space-y-2">
-                        <label className="text-xs font-bold text-blue-300 uppercase tracking-widest">Reference Source</label>
+                        <label className="text-xs font-bold text-blue-300 uppercase tracking-widest">Fuente de Referencia</label>
                         <input
                             className="w-full bg-blue-900/20 border-2 border-blue-800/50 rounded-lg px-4 py-2 text-sm font-medium focus:border-primary focus:ring-0 transition-all outline-none text-white placeholder:text-blue-400/50"
                             value={source}
@@ -54,8 +54,8 @@ const EmissionModal: React.FC<EmissionModalProps> = ({ onClose, onSave, initialD
                     {/* Concentration Field */}
                     <div className="space-y-2">
                         <div className="flex justify-between items-center">
-                            <label className="text-xs font-bold text-blue-300 uppercase tracking-widest">Concentration</label>
-                            <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded">Required</span>
+                            <label className="text-xs font-bold text-blue-300 uppercase tracking-widest">Concentración</label>
+                            <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded">Requerido</span>
                         </div>
                         <div className="relative group">
                             <input
@@ -75,8 +75,8 @@ const EmissionModal: React.FC<EmissionModalProps> = ({ onClose, onSave, initialD
                     {/* Mass Flow Rate Field */}
                     <div className="space-y-2">
                         <div className="flex justify-between items-center">
-                            <label className="text-xs font-bold text-blue-300 uppercase tracking-widest">Mass Flow Rate</label>
-                            <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded">Required</span>
+                            <label className="text-xs font-bold text-blue-300 uppercase tracking-widest">Flujo Másico</label>
+                            <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded">Requerido</span>
                         </div>
                         <div className="relative group">
                             <input
@@ -108,14 +108,14 @@ const EmissionModal: React.FC<EmissionModalProps> = ({ onClose, onSave, initialD
                         onClick={onClose}
                         className="flex-1 py-3.5 px-4 rounded-lg font-bold text-blue-200 border border-blue-800/50 hover:bg-white/5 transition-colors"
                     >
-                        Cancel
+                        Cancelar
                     </button>
                     <button
                         onClick={handleSave}
                         disabled={!concentration || !massFlowRate}
                         className="flex-[1.5] py-3.5 px-4 rounded-lg font-bold text-white bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:scale-100"
                     >
-                        <span>Save Record</span>
+                        <span>Guardar Registro</span>
                         <span className="material-symbols-outlined text-sm">arrow_forward</span>
                     </button>
                 </div>

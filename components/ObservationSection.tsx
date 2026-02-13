@@ -14,10 +14,10 @@ const ObservationSection: React.FC<ObservationSectionProps> = ({ value, onChange
             <div className="mb-5">
                 <div className="flex items-center gap-2 mb-2">
                     <span className="material-symbols-outlined text-primary/80 text-xl">description</span>
-                    <h2 className="text-xs font-semibold uppercase tracking-wider text-primary/80">Observation Details</h2>
+                    <h2 className="text-xs font-semibold uppercase tracking-wider text-primary/80">Sección de observaciones</h2>
                 </div>
                 <p className="text-blue-200 text-sm leading-relaxed">
-                    Provide a detailed qualitative report of environmental conditions and anomalies detected.
+                    Agregue anotaciones que considere relevantes.
                 </p>
             </div>
 
@@ -26,7 +26,7 @@ const ObservationSection: React.FC<ObservationSectionProps> = ({ value, onChange
                     <textarea
                         className="w-full h-full p-4 bg-transparent border-none focus:ring-0 text-base resize-none placeholder:text-blue-300/50 font-sans text-white outline-none"
                         maxLength={MAX_CHARS}
-                        placeholder="Describe environmental findings..."
+                        placeholder="Escriba aquí sus observaciones..."
                         value={value}
                         onChange={(e) => onChange(e.target.value)}
                     ></textarea>
