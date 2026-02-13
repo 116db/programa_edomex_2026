@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ onReset }) => {
             onClick={onReset}
             className="text-xs text-[18px] text-blue-200 hover:text-white underline mt-1"
           >
-            Cargar programa nuevo
+            Actualizar Programa de Trabajo
           </button>
         )}
       </div>
