@@ -68,7 +68,7 @@ const ObservationsScreen: React.FC<ObservationsScreenProps> = ({ asset, onBack, 
                     className="flex items-center text-primary transition-colors hover:opacity-70"
                 >
                     <span className="material-symbols-outlined text-2xl">chevron_left</span>
-                    <span className="text-lg">Inspections</span>
+                    <span className="text-lg">Inspecciones</span>
                 </button>
                 <div className="flex flex-col items-center">
                     <h1 className="text-lg font-bold tracking-tight">Observaciones</h1>

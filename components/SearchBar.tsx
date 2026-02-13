@@ -20,12 +20,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange }) => {
           onChange={(e) => onChange(e.target.value)}
           className="block w-full pl-10 pr-10 py-2.5 bg-surface border border-transparent rounded-lg 
                    text-slate-200 placeholder-slate-500 text-sm focus:outline-none focus:border-primary/50 focus:bg-[#1e2c3b] transition-all"
-          placeholder="Search technical IDs..."
+          placeholder="Buscar UT"
         />
         <div className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer hover:text-white text-slate-500 transition-colors">
-          <span className="material-symbols-outlined text-[20px]">
-            mic
-          </span>
+
         </div>
       </div>
     </div>

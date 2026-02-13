@@ -3,7 +3,7 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import AssetItem from './components/AssetItem';
 import ExcelUploader from './components/ExcelUploader';
-import ObservationsScreen from './components/ObservationsScreen';
+import ObservationsScreen from './components/ObservationsScreen.tsx';
 import { DaySchedule, Emission } from './types';
 
 const App: React.FC = () => {
@@ -149,7 +149,7 @@ const App: React.FC = () => {
 
             return (
               <section key={dayGroup.day} className="mb-1">
-                <div className="sticky top-0 z-30 bg-surface/95 backdrop-blur-sm border-y border-border px-4 py-2.5 flex justify-between items-center shadow-sm">
+                <div className="sticky top-0 z-30 bg-[#049DD9]/50 backdrop-blur-sm border-y border-border px-4 py-2.5 flex justify-between items-center shadow-sm">
                   <div className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-blue-200 text-sm">calendar_today</span>
                     <h2 className="text-sm font-bold text-white uppercase tracking-wider">
