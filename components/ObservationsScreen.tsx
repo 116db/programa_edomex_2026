@@ -60,7 +60,7 @@ const ObservationsScreen: React.FC<ObservationsScreenProps> = ({ asset, onBack, 
     };
 
     return (
-        <div className="min-h-screen bg-background text-slate-100 flex flex-col relative overflow-hidden">
+        <div className="min-h-screen text-slate-100 flex flex-col relative overflow-hidden">
             {/* Fixed Header */}
             <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-primary/10 px-4 py-3 flex items-center justify-between">
                 <button
@@ -72,7 +72,7 @@ const ObservationsScreen: React.FC<ObservationsScreenProps> = ({ asset, onBack, 
                 </button>
                 <div className="flex flex-col items-center">
                     <h1 className="text-lg font-bold tracking-tight">Observations</h1>
-                    <span className="text-xs text-slate-500 font-mono">{asset.id}</span>
+                    <span className="text-xs text-blue-200 font-mono">{asset.id}</span>
                 </div>
                 <div className="w-10"></div>
             </header>
@@ -88,7 +88,7 @@ const ObservationsScreen: React.FC<ObservationsScreenProps> = ({ asset, onBack, 
                 <div className="flex items-center justify-between shrink-0">
                     <div className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-primary text-xl">factory</span>
-                        <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-300">Emissions</h2>
+                        <h2 className="text-sm font-semibold uppercase tracking-wider text-blue-200">Emissions</h2>
                     </div>
                     <button
                         onClick={() => setIsModalOpen(true)}
@@ -100,9 +100,9 @@ const ObservationsScreen: React.FC<ObservationsScreenProps> = ({ asset, onBack, 
                 </div>
 
                 {/* Emissions List Container */}
-                <div className="bg-slate-800/30 rounded-xl p-2 border border-slate-800 space-y-2">
+                <div className="bg-blue-900/20 rounded-xl p-2 border border-blue-800 space-y-2">
                     {emissions.length === 0 ? (
-                        <div className="p-8 text-center text-slate-500 italic text-sm">
+                        <div className="p-8 text-center text-blue-200 italic text-sm">
                             No emission data logged yet.
                         </div>
                     ) : (
@@ -130,7 +130,7 @@ const ObservationsScreen: React.FC<ObservationsScreenProps> = ({ asset, onBack, 
                         </span>
                         <span className="material-symbols-outlined">save</span>
                     </button>
-                    <p className="text-center text-[10px] text-slate-400 uppercase tracking-[0.2em] font-medium mt-3">
+                    <p className="text-center text-[10px] text-blue-300 uppercase tracking-[0.2em] font-medium mt-3">
                         Environmental Compliance Management
                     </p>
                 </div>

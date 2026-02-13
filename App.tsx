@@ -129,7 +129,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col font-sans">
+    <div className="min-h-screen flex flex-col font-sans">
       <div className="relative">
         <Header onReset={handleReset} />
       </div>
@@ -138,7 +138,7 @@ const App: React.FC = () => {
 
       <div className="flex-1 pb-24 overflow-y-auto relative">
         {filteredData.length === 0 ? (
-          <div className="flex flex-col items-center justify-center pt-20 text-slate-500">
+          <div className="flex flex-col items-center justify-center pt-20 text-blue-200">
             <span className="material-symbols-outlined text-6xl mb-4 opacity-20">search_off</span>
             <p>No se encontraron resultados</p>
           </div>
@@ -151,9 +151,9 @@ const App: React.FC = () => {
               <section key={dayGroup.day} className="mb-1">
                 <div className="sticky top-0 z-30 bg-surface/95 backdrop-blur-sm border-y border-border px-4 py-2.5 flex justify-between items-center shadow-sm">
                   <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-slate-400 text-sm">calendar_today</span>
+                    <span className="material-symbols-outlined text-blue-200 text-sm">calendar_today</span>
                     <h2 className="text-sm font-bold text-white uppercase tracking-wider">
-                      DÍA {dayGroup.day} <span className="text-slate-500 font-normal">/ {getDayDate(dayGroup.day)}</span>
+                      DÍA {dayGroup.day} <span className="text-blue-200 font-normal">/ {getDayDate(dayGroup.day)}</span>
                     </h2>
                   </div>
                   <div className={`text-[10px] font-bold px-2 py-0.5 rounded-full border 

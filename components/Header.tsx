@@ -6,7 +6,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onReset }) => {
   return (
-    <div className="flex items-center justify-between px-4 py-3 bg-background border-b border-border sticky top-0 z-50">
+    <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-b from-blue-900/80 to-transparent border-b border-blue-800/30 sticky top-0 z-50 backdrop-blur-sm">
       <button className="text-white hover:text-gray-300 transition-colors p-1">
         <span className="material-symbols-outlined text-[28px]">arrow_back_ios_new</span>
       </button>
@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ onReset }) => {
         {onReset && (
           <button
             onClick={onReset}
-            className="text-[10px] text-slate-400 hover:text-white underline mt-1"
+            className="text-[10px] text-blue-200 hover:text-white underline mt-1"
           >
             Cargar Nuevo
           </button>

@@ -49,25 +49,25 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex, onO
         {/* Content Area */}
         <div className="flex-1 min-w-0 flex flex-col justify-center">
           <div className="flex items-baseline gap-2 mb-0.5">
-            <span className={`text-xs font-mono font-bold ${asset.completed ? 'text-slate-600' : 'text-primary'}`}>
+            <span className={`text-xs font-mono font-bold ${asset.completed ? 'text-blue-300' : 'text-primary'}`}>
               {String(globalIndex + 1).padStart(2, '0')}
             </span>
             <h3 className={`text-base font-bold font-mono tracking-tight truncate transition-colors duration-200
-              ${asset.completed ? 'text-slate-500 line-through decoration-slate-600' : 'text-slate-100'}`}>
+              ${asset.completed ? 'text-blue-300 line-through decoration-blue-400' : 'text-white'}`}>
               {asset.id}
             </h3>
           </div>
           <p className={`text-xs leading-relaxed transition-colors duration-200 line-clamp-2
-            ${asset.completed ? 'text-slate-600' : 'text-slate-400'}`}>
+            ${asset.completed ? 'text-blue-200' : 'text-blue-100'}`}>
             {asset.description}
           </p>
           <div className="flex items-center gap-2 mt-1">
-            <span className="px-1.5 py-0.5 rounded bg-slate-800 text-[10px] font-medium text-slate-400 border border-slate-700">
+            <span className="px-1.5 py-0.5 rounded bg-blue-900/50 text-[10px] font-medium text-blue-100 border border-blue-700">
               {asset.classType}
             </span>
             {/* Coordinate preview if valid */}
             {hasValidCoordinates && (
-              <span className="text-[10px] text-slate-600 font-mono hidden sm:inline">
+              <span className="text-[10px] text-blue-200 font-mono hidden sm:inline">
                 {coordinates[0].toFixed(4)}, {coordinates[1].toFixed(4)}
               </span>
             )}
@@ -88,21 +88,8 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex, onO
             Observaciones
           </button>
 
-          {/* Internal Map Button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              if (hasValidCoordinates) setIsMapOpen(true);
-            }}
-            disabled={!hasValidCoordinates || asset.completed}
-            className={`p-2 rounded-full transition-colors 
-            ${!hasValidCoordinates || asset.completed
-                ? 'text-slate-700 cursor-not-allowed hidden group-hover:block opacity-50'
-                : 'text-secondary hover:bg-secondary/10'}`}
-            title="Ver en Mapa"
-          >
-            <span className="material-symbols-outlined text-[20px]">map</span>
-          </button>
+
+
 
           {/* External Google Maps Button */}
           <button
@@ -114,7 +101,7 @@ const AssetItem: React.FC<AssetItemProps> = ({ asset, onToggle, globalIndex, onO
             className={`p-2 rounded-full transition-colors 
             ${asset.completed
                 ? 'text-slate-700 cursor-not-allowed'
-                : 'text-slate-400 hover:text-primary hover:bg-slate-800'}`}
+                : 'text-blue-200 hover:text-white hover:bg-blue-800'}`}
             title="Cómo llegar (Google Maps)"
           >
             <span className="material-symbols-outlined text-[20px]">directions</span>
